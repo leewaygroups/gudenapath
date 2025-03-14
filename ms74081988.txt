@@ -1,0 +1,5 @@
+﻿{
+  "Description": "Domain ownership verification file for Microsoft 365 - place in the website root",
+  "Domain": "gudenapath.com",
+  "Id": "54ffa07f-d605-4fb7-a043-e76bb337aea5"
+}
