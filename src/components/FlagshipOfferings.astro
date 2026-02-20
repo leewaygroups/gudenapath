@@ -1,0 +1,145 @@
+---
+const offerings = [
+  {
+    number: '01',
+    title: 'Expansion Blueprint™',
+    subtitle: 'A full strategic and operational architecture for cross-border growth.',
+    tier: 'Fixed Engagement',
+    priceSignal: 'From €25K',
+    deliverable: 'A market-ready execution framework.',
+    items: null,
+  },
+  {
+    number: '02',
+    title: 'Growth Infrastructure Build™',
+    subtitle: 'We establish your complete operational footprint across borders — from partner networks to demand engines.',
+    tier: 'Project-Based',
+    priceSignal: 'From €80K',
+    deliverable: null,
+    items: [
+      'Strategic partnership development',
+      'Representation structure setup',
+      'Channel network architecture',
+      'Demand engine & lead generation',
+      'Regulatory navigation & compliance',
+    ],
+  },
+  {
+    number: '03',
+    title: 'Embedded Expansion Partner™',
+    subtitle: 'We act as your Nordic office in China. Or your China office in the Nordics. Full operational presence, no entity setup required.',
+    tier: 'Monthly Retainer',
+    priceSignal: 'From €10K/month',
+    deliverable: null,
+    items: [
+      'Dedicated local phone number & business address',
+      'Meeting facilitation & negotiation support',
+      'Market intelligence & competitive monitoring',
+      'Ongoing deal flow & pipeline development',
+      'Government & institutional access',
+      'Cultural advisory & relationship management',
+    ],
+  },
+  {
+    number: '04',
+    title: 'Nordic–China Strategic Access™',
+    subtitle: 'Curated, high-trust introductions to the people and institutions that move markets. This is not networking — this is orchestrated access.',
+    tier: 'Retainer + Success-Based',
+    priceSignal: 'Custom',
+    deliverable: null,
+    items: [
+      'Investor introductions & capital access',
+      'Strategic buyer & acquirer meetings',
+      'Industrial partnership facilitation',
+      'Trade authority & government channels',
+      'Ecosystem leader connections',
+    ],
+  },
+];
+---
+
+<section class="bg-snow section-padding-lg" id="offerings">
+  <div class="container-narrow">
+    <!-- Header -->
+    <div class="max-w-3xl mb-16" data-aos="fade-up">
+      <span class="accent-line mb-6"></span>
+      <h2 class="text-4xl sm:text-5xl lg:text-6xl font-serif text-nordic-navy leading-tight">
+        Our Flagship Offerings
+      </h2>
+      <p class="mt-4 text-lg text-charcoal/55">
+        Premium positioning, premium results. We don't compete on price — we compete on outcome.
+      </p>
+    </div>
+
+    <!-- Offerings stack -->
+    <div class="space-y-6">
+      {offerings.map((offering, i) => (
+        <div
+          class="group relative rounded-xl bg-white border border-frost hover:border-fjord-blue/20 card-shadow hover:card-shadow-hover transition-all duration-500"
+          data-aos="fade-up"
+          data-aos-delay={i * 100}
+        >
+          <div class="p-8 sm:p-10 lg:p-12">
+            <div class="flex flex-col lg:flex-row lg:items-start gap-8">
+              <!-- Number -->
+              <div class="flex-shrink-0">
+                <span class="text-5xl sm:text-6xl font-serif text-nordic-navy/10 group-hover:text-nordic-red/20 transition-colors duration-500 leading-none">
+                  {offering.number}
+                </span>
+              </div>
+
+              <!-- Content -->
+              <div class="flex-1">
+                <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-1">
+                  <h3 class="text-2xl sm:text-3xl font-serif text-nordic-navy leading-snug">
+                    {offering.title}
+                  </h3>
+                </div>
+
+                <!-- Tier + Price -->
+                <div class="flex flex-wrap items-center gap-3 mt-2 mb-4">
+                  <span class="inline-block px-3 py-1 text-[10px] font-semibold tracking-[0.15em] uppercase bg-nordic-navy/5 text-nordic-navy rounded-md">
+                    {offering.tier}
+                  </span>
+                  <span class="text-sm font-semibold text-nordic-red">
+                    {offering.priceSignal}
+                  </span>
+                </div>
+
+                <p class="text-base text-charcoal/55 leading-relaxed max-w-2xl">
+                  {offering.subtitle}
+                </p>
+
+                {offering.deliverable && (
+                  <div class="mt-6 inline-flex items-center gap-3 px-5 py-3 bg-nordic-red/5 border border-nordic-red/15 rounded-lg">
+                    <span class="text-xs font-semibold tracking-[0.15em] uppercase text-nordic-red">Deliverable:</span>
+                    <span class="text-sm text-charcoal/70">{offering.deliverable}</span>
+                  </div>
+                )}
+
+                {offering.items && (
+                  <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {offering.items.map((item) => (
+                      <div class="flex items-start gap-3 text-sm text-charcoal/55">
+                        <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-nordic-red/40 flex-shrink-0"></span>
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom tagline -->
+    <div class="mt-16 text-center" data-aos="fade-up">
+      <p class="text-xl text-charcoal/35 font-light">When you own the category, pricing follows authority.</p>
+      <p class="text-2xl sm:text-3xl font-serif text-nordic-navy mt-2">
+        We orchestrate <span class="text-nordic-red">access.</span>
+      </p>
+    </div>
+  </div>
+</section>

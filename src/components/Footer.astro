@@ -1,0 +1,102 @@
+---
+const currentYear = new Date().getFullYear();
+
+const footerLinks = [
+  { label: 'What We Do', href: '/#what-we-do' },
+  { label: 'Offerings', href: '/#offerings' },
+  { label: 'Leadership', href: '/#leadership' },
+  { label: 'Alliance', href: '/#alliance' },
+  { label: 'Insights', href: '/insights/' },
+  { label: 'Contact', href: '/contact/' },
+];
+
+const regions = [
+  'Denmark', 'Sweden', 'Norway', 'Finland', 'Iceland', 'China'
+];
+---
+
+<footer class="bg-nordic-navy text-white/60">
+  <!-- Main Footer -->
+  <div class="container-narrow section-padding">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+      <!-- Brand -->
+      <div class="lg:col-span-1">
+        <a href="/" class="text-2xl font-serif font-bold text-white">
+          Gudenapath
+        </a>
+        <p class="mt-4 text-sm leading-relaxed text-white/35">
+          The Nordic–China Growth Infrastructure™
+        </p>
+        <p class="mt-3 text-sm leading-relaxed">
+          We architect, build, and operate cross-border expansion systems between the Nordics and China.
+        </p>
+      </div>
+
+      <!-- Navigation -->
+      <div>
+        <h4 class="text-xs font-sans font-semibold tracking-[0.2em] uppercase text-nordic-red mb-6">
+          Navigate
+        </h4>
+        <ul class="space-y-3">
+          {footerLinks.map((link) => (
+            <li>
+              <a href={link.href} class="text-sm hover:text-white transition-colors duration-300">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Regions -->
+      <div>
+        <h4 class="text-xs font-sans font-semibold tracking-[0.2em] uppercase text-nordic-red mb-6">
+          Active Regions
+        </h4>
+        <ul class="space-y-3">
+          {regions.map((region) => (
+            <li class="text-sm">{region}</li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="text-xs font-sans font-semibold tracking-[0.2em] uppercase text-nordic-red mb-6">
+          Contact
+        </h4>
+        <address class="not-italic space-y-3 text-sm">
+          <p>Hvedemarken 37, 1 th<br />6400 Sønderborg, Denmark</p>
+          <p>
+            <a href="mailto:info@gudenapath.com" class="hover:text-white transition-colors duration-300">
+              info@gudenapath.com
+            </a>
+          </p>
+          <p>
+            <a href="tel:+4591769460" class="hover:text-white transition-colors duration-300">
+              +45 91 76 94 60
+            </a>
+          </p>
+        </address>
+
+        <!-- Social -->
+        <div class="flex gap-4 mt-6">
+          <a href="#" aria-label="LinkedIn" class="text-white/30 hover:text-nordic-red transition-colors duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </a>
+          <a href="#" aria-label="Twitter" class="text-white/30 hover:text-nordic-red transition-colors duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright Bar -->
+  <div class="border-t border-white/10">
+    <div class="container-narrow py-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-white/25">
+      <p>&copy; {currentYear} Gudenå Path ApS. All rights reserved.</p>
+      <p>The Nordic–China Growth Infrastructure™</p>
+    </div>
+  </div>
+</footer>

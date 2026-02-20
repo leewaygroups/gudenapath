@@ -1,0 +1,74 @@
+---
+const verticals = [
+  {
+    title: 'Green Tech & Sustainability',
+    description: 'Clean energy, circular economy, and sustainable innovation bridging Nordic leadership with China\'s green transition.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>`,
+  },
+  {
+    title: 'Life Science & MedTech',
+    description: 'Pharmaceuticals, medical devices, and biotech collaborations across regulatory landscapes.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v6.292a4 4 0 0 0 1 2.627l.5.5a4 4 0 0 1 1 2.627V22"/><path d="M14 2v6.292a4 4 0 0 1-1 2.627l-.5.5a4 4 0 0 0-1 2.627V22"/><path d="M8 2h8"/><path d="M8 22h8"/></svg>`,
+  },
+  {
+    title: 'Advanced Manufacturing',
+    description: 'Industrial automation, robotics, and precision engineering partnerships at scale.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/></svg>`,
+  },
+  {
+    title: 'Premium Consumer Brands',
+    description: 'Luxury goods, food & beverage, and lifestyle brands entering new consumer markets.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>`,
+  },
+  {
+    title: 'Energy & Maritime Innovation',
+    description: 'Offshore wind, shipping technology, and maritime solutions connecting Nordic expertise with Asian demand.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M2 5h20"/><path d="M3 3l7 8V3"/><path d="M14 3v8l7-8"/></svg>`,
+  },
+];
+---
+
+<section class="bg-white section-padding-lg" id="strategic-focus">
+  <div class="container-narrow">
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+      <span class="accent-line mx-auto mb-6"></span>
+      <h2 class="text-4xl sm:text-5xl lg:text-6xl font-serif text-nordic-navy leading-tight">
+        Our Strategic Focus
+      </h2>
+      <p class="mt-6 text-lg text-charcoal/60">
+        We specialize where impact matters.
+      </p>
+    </div>
+
+    <!-- Vertical cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {verticals.map((vertical, i) => (
+        <div
+          class:list={[
+            "group relative p-8 rounded-xl bg-snow hover:bg-white border border-frost hover:border-fjord-blue/20 card-shadow hover:card-shadow-hover transition-all duration-500",
+            i === 4 ? "sm:col-span-2 lg:col-span-1" : ""
+          ]}
+          data-aos="fade-up"
+          data-aos-delay={i * 100}
+        >
+          <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-nordic-navy/5 text-nordic-navy group-hover:bg-nordic-red/8 group-hover:text-nordic-red transition-all duration-300 mb-5" set:html={vertical.icon} />
+          <h3 class="text-lg font-serif text-nordic-navy leading-snug mb-3">
+            {vertical.title}
+          </h3>
+          <p class="text-sm text-charcoal/50 leading-relaxed">
+            {vertical.description}
+          </p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom statement -->
+    <div class="mt-16 text-center" data-aos="fade-up">
+      <p class="text-xl text-charcoal/35 font-light">We don't serve everyone.</p>
+      <p class="text-2xl sm:text-3xl font-serif text-nordic-navy mt-2">
+        We serve <span class="text-nordic-red">leaders.</span>
+      </p>
+    </div>
+  </div>
+</section>

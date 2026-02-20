@@ -1,0 +1,70 @@
+---
+const pillars = [
+  {
+    title: 'Structural Understanding',
+    description: 'Deep knowledge of how Nordic and Chinese business ecosystems actually work.',
+  },
+  {
+    title: 'Political Navigation',
+    description: 'Ability to move through governmental and institutional landscapes in both regions.',
+  },
+  {
+    title: 'Cultural Fluency',
+    description: 'Native-level comprehension of business cultures, negotiation styles, and relationship dynamics.',
+  },
+  {
+    title: 'Relationship Capital',
+    description: 'Decades of trust-based connections built across borders — not cold introductions.',
+  },
+  {
+    title: 'Operational Continuity',
+    description: 'Sustained execution capability, not one-off advisory engagements.',
+  },
+];
+---
+
+<section class="bg-snow section-padding-lg" id="why-gudenapath">
+  <div class="container-narrow">
+    <!-- Header -->
+    <div class="max-w-3xl mb-16" data-aos="fade-up">
+      <span class="accent-line mb-6"></span>
+      <p class="text-sm font-semibold tracking-[0.2em] uppercase text-charcoal/35 mb-4">
+        Not "Why Choose Us"
+      </p>
+      <h2 class="text-4xl sm:text-5xl lg:text-6xl font-serif text-nordic-navy leading-tight">
+        Why the Category Exists
+      </h2>
+      <p class="mt-6 text-lg text-charcoal/60 leading-relaxed">
+        Because expansion between the Nordics and China requires capabilities that no single firm has unified — until now.
+      </p>
+    </div>
+
+    <!-- Pillars -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+      {pillars.map((pillar, i) => (
+        <div
+          class="group text-center p-6 sm:p-8 rounded-xl bg-white border border-frost hover:border-fjord-blue/20 card-shadow hover:card-shadow-hover transition-all duration-500"
+          data-aos="fade-up"
+          data-aos-delay={i * 100}
+        >
+          <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-nordic-navy/5 text-sm font-mono text-nordic-navy group-hover:bg-nordic-red/8 group-hover:text-nordic-red transition-all duration-300">
+            {String(i + 1).padStart(2, '0')}
+          </span>
+          <h3 class="mt-5 text-base font-serif text-nordic-navy leading-snug">
+            {pillar.title}
+          </h3>
+          <p class="mt-3 text-xs text-charcoal/45 leading-relaxed">
+            {pillar.description}
+          </p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom -->
+    <div class="mt-16 text-center" data-aos="fade-up">
+      <p class="text-xl sm:text-2xl font-serif text-nordic-navy">
+        Gudenapath was built to <span class="text-nordic-red">unify these layers.</span>
+      </p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,70 @@
+---
+const painPoints = [
+  {
+    label: 'Regulatory fragmentation',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><path d="M10 10.3c.2-.4.5-.8.9-1a2.1 2.1 0 0 1 2.6.4c.3.4.5.8.5 1.3 0 1.3-2 2-2 2"/><circle cx="12" cy="17" r=".5"/></svg>`,
+  },
+  {
+    label: 'Cultural misalignment',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="17" y1="11" x2="22" y2="6"/><line x1="17" y1="6" x2="22" y2="11"/></svg>`,
+  },
+  {
+    label: 'Partner risk',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>`,
+  },
+  {
+    label: 'Weak localization',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><line x1="4" y1="4" x2="20" y2="20"/></svg>`,
+  },
+  {
+    label: 'No operational continuity',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="2" x2="22" y2="22"/><path d="M8.5 16.5a5 5 0 0 1-1-9.8"/><path d="M17 18a5 5 0 0 0 .8-9.8"/><path d="M12 2v6"/><path d="M12 18v4"/></svg>`,
+  },
+];
+---
+
+<section class="bg-white section-padding-lg" id="category">
+  <div class="container-narrow">
+    <!-- Section header -->
+    <div class="max-w-3xl" data-aos="fade-up">
+      <span class="accent-line mb-6"></span>
+      <h2 class="text-4xl sm:text-5xl lg:text-6xl font-serif text-nordic-navy leading-tight">
+        Cross-Border Expansion<br />Is Broken.
+      </h2>
+    </div>
+
+    <div class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+      <!-- Pain points -->
+      <div>
+        <p class="text-lg text-charcoal/70 leading-relaxed mb-8" data-aos="fade-up" data-aos-delay="100">
+          Companies fail between the Nordics and China because of:
+        </p>
+        <ul class="space-y-4">
+          {painPoints.map((point, i) => (
+            <li
+              class="flex items-center gap-4 group p-3 rounded-lg hover:bg-snow transition-colors duration-300"
+              data-aos="fade-right"
+              data-aos-delay={150 + i * 80}
+            >
+              <span class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-nordic-red/8 text-nordic-red group-hover:bg-nordic-red/15 transition-colors duration-300" set:html={point.icon} />
+              <span class="text-base font-medium text-charcoal">{point.label}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Differentiator -->
+      <div class="lg:mt-8" data-aos="fade-up" data-aos-delay="300">
+        <div class="relative p-8 sm:p-12 bg-snow rounded-xl card-shadow">
+          <span class="absolute top-0 left-8 right-8 h-1 bg-gradient-to-r from-nordic-red via-nordic-red/60 to-transparent rounded-b"></span>
+          <p class="text-xl sm:text-2xl text-charcoal/50 font-light leading-relaxed mb-6">
+            Most firms offer pieces.
+          </p>
+          <p class="text-3xl sm:text-4xl font-serif text-nordic-navy leading-snug">
+            We build the <span class="text-nordic-red">entire system.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

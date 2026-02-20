@@ -1,0 +1,75 @@
+---
+const teaserTopics = [
+  {
+    tag: 'Regulatory',
+    title: 'Regulatory shifts reshaping Nordic-China trade corridors',
+    description: 'Analysis of evolving compliance frameworks and their impact on cross-border operations.',
+  },
+  {
+    tag: 'Trade Flows',
+    title: 'Nordic export momentum: sectors gaining ground in China',
+    description: 'Quarterly data on trade volumes, emerging verticals, and market access developments.',
+  },
+  {
+    tag: 'Risk Forecast',
+    title: 'Geopolitical risk map for Nordic businesses in China',
+    description: 'Forward-looking assessment of political, economic, and operational risk factors.',
+  },
+];
+---
+
+<section class="bg-white section-padding-lg" id="insights">
+  <div class="container-narrow">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+      <!-- Left column: section intro -->
+      <div class="lg:col-span-4" data-aos="fade-right">
+        <span class="accent-line mb-6"></span>
+        <h2 class="text-4xl sm:text-5xl font-serif text-nordic-navy leading-tight">
+          The Nordic–China<br />
+          <span class="text-fjord-blue">Growth Index</span>
+        </h2>
+        <p class="mt-6 text-base text-charcoal/60 leading-relaxed">
+          Quarterly intelligence covering regulatory shifts, trade flows, industry insights, case studies, and risk forecasting.
+        </p>
+        <p class="mt-4 text-sm text-charcoal/35">
+          Move from service provider to strategic authority.
+        </p>
+        <a
+          href="/insights/"
+          class="inline-flex items-center gap-2 mt-8 text-sm font-semibold tracking-wide text-nordic-red hover:text-nordic-red-dark transition-colors duration-300"
+        >
+          View All Insights
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
+
+      <!-- Right column: article cards -->
+      <div class="lg:col-span-8 space-y-5">
+        {teaserTopics.map((topic, i) => (
+          <article
+            class="group relative p-6 sm:p-8 bg-snow hover:bg-white rounded-xl border border-frost hover:border-fjord-blue/20 card-shadow hover:card-shadow-hover transition-all duration-500 cursor-pointer"
+            data-aos="fade-left"
+            data-aos-delay={i * 120}
+          >
+            <div class="flex flex-col sm:flex-row sm:items-start gap-4">
+              <span class="inline-block px-3 py-1 text-[10px] font-semibold tracking-[0.15em] uppercase bg-nordic-navy/5 text-nordic-navy rounded-md w-fit">
+                {topic.tag}
+              </span>
+              <div class="flex-1">
+                <h3 class="text-lg font-serif text-nordic-navy leading-snug group-hover:text-fjord-blue transition-colors duration-300">
+                  {topic.title}
+                </h3>
+                <p class="mt-2 text-sm text-charcoal/45 leading-relaxed">
+                  {topic.description}
+                </p>
+              </div>
+              <span class="hidden sm:flex items-center text-charcoal/15 group-hover:text-nordic-red transition-colors duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,114 @@
+---
+const countries = [
+  { name: 'Denmark', flag: '🇩🇰' },
+  { name: 'Sweden', flag: '🇸🇪' },
+  { name: 'Norway', flag: '🇳🇴' },
+  { name: 'Finland', flag: '🇫🇮' },
+  { name: 'Iceland', flag: '🇮🇸' },
+  { name: 'China', flag: '🇨🇳', accent: true },
+];
+---
+
+<section class="bg-snow section-padding-lg overflow-hidden" id="geographic">
+  <div class="container-narrow">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <!-- Text -->
+      <div>
+        <span class="accent-line mb-6" data-aos="fade-right"></span>
+        <h2 class="text-4xl sm:text-5xl font-serif text-nordic-navy leading-tight" data-aos="fade-right" data-aos-delay="100">
+          The Unified Nordic Gateway<br />
+          <span class="text-fjord-blue">to China.</span>
+        </h2>
+        <p class="mt-2 text-2xl sm:text-3xl font-serif text-charcoal/40 leading-tight" data-aos="fade-right" data-aos-delay="200">
+          The Strategic China Gateway<br />to the Nordics.
+        </p>
+
+        <p class="mt-8 text-base text-charcoal/60 leading-relaxed max-w-lg" data-aos="fade-right" data-aos-delay="300">
+          Instead of fragmented national consultants, we operate as one integrated Nordic platform — a single point of entry for cross-border expansion in either direction.
+        </p>
+
+        <!-- Country tags -->
+        <div class="mt-10 flex flex-wrap gap-3" data-aos="fade-right" data-aos-delay="400">
+          {countries.map((country) => (
+            <span class:list={[
+              "inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg border transition-colors duration-300",
+              country.accent
+                ? "border-nordic-red/25 text-nordic-red bg-nordic-red/5"
+                : "border-frost text-charcoal/70 bg-white hover:border-fjord-blue/30 card-shadow"
+            ]}>
+              <span class="text-base">{country.flag}</span>
+              {country.name}
+            </span>
+          ))}
+        </div>
+
+        <!-- Nordic Advisory Council -->
+        <div class="mt-10 p-6 rounded-xl bg-white border border-frost card-shadow" data-aos="fade-right" data-aos-delay="500">
+          <h4 class="text-xs font-sans font-semibold tracking-[0.2em] uppercase text-nordic-red mb-4">
+            Our Operational Reach
+          </h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {[
+              'Nordic Advisory Council of senior industry leaders',
+              'Strategic partners in each Nordic country',
+              'Local ambassadors with institutional relationships',
+              'Government & trade authority networks',
+              'China-based team with Nordic-side coordination',
+              'University & research institution connections',
+            ].map((item) => (
+              <div class="flex items-start gap-2 text-sm text-charcoal/60">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-fjord-blue mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Map visualization -->
+      <div class="relative" data-aos="fade-left" data-aos-delay="200">
+        <div class="relative aspect-square max-w-md mx-auto">
+          <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+            <circle cx="200" cy="200" r="180" fill="none" stroke="#E5E7EB" stroke-width="1" />
+            <circle cx="200" cy="200" r="160" fill="none" stroke="#E5E7EB" stroke-width="0.5" stroke-dasharray="4 4" />
+            <circle cx="200" cy="200" r="140" fill="none" stroke="#E5E7EB" stroke-width="0.5" stroke-dasharray="2 6" />
+
+            <!-- Nordic cluster -->
+            <circle cx="150" cy="140" r="8" fill="#002F6C" opacity="0.8">
+              <animate attributeName="r" values="8;10;8" dur="3s" repeatCount="indefinite" />
+            </circle>
+            <text x="150" y="120" text-anchor="middle" fill="#002F6C" font-size="10" font-family="Inter, sans-serif" font-weight="500">DK</text>
+
+            <circle cx="165" cy="110" r="6" fill="#3B82C4" opacity="0.7" />
+            <text x="165" y="95" text-anchor="middle" fill="#3B82C4" font-size="9" font-family="Inter, sans-serif">SE</text>
+
+            <circle cx="130" cy="115" r="6" fill="#3B82C4" opacity="0.7" />
+            <text x="130" y="100" text-anchor="middle" fill="#3B82C4" font-size="9" font-family="Inter, sans-serif">NO</text>
+
+            <circle cx="185" cy="105" r="5" fill="#3B82C4" opacity="0.6" />
+            <text x="185" y="92" text-anchor="middle" fill="#3B82C4" font-size="9" font-family="Inter, sans-serif">FI</text>
+
+            <circle cx="105" cy="100" r="4" fill="#3B82C4" opacity="0.5" />
+            <text x="105" y="88" text-anchor="middle" fill="#3B82C4" font-size="8" font-family="Inter, sans-serif">IS</text>
+
+            <!-- China -->
+            <circle cx="280" cy="240" r="12" fill="#EF2B2D" opacity="0.8">
+              <animate attributeName="r" values="12;14;12" dur="3s" repeatCount="indefinite" />
+            </circle>
+            <text x="280" y="270" text-anchor="middle" fill="#EF2B2D" font-size="11" font-family="Inter, sans-serif" font-weight="500">CHINA</text>
+
+            <!-- Connection arc -->
+            <path d="M158 148 Q 220 60 272 232" fill="none" stroke="#002F6C" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.4">
+              <animate attributeName="stroke-dashoffset" values="0;-20" dur="2s" repeatCount="indefinite" />
+            </path>
+
+            <!-- Gudenapath node -->
+            <circle cx="215" cy="185" r="16" fill="#EF2B2D" opacity="0.1" />
+            <circle cx="215" cy="185" r="6" fill="#EF2B2D" />
+            <text x="215" y="210" text-anchor="middle" fill="#002F6C" font-size="9" font-family="Inter, sans-serif" font-weight="600" letter-spacing="0.1em">GUDENAPATH</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

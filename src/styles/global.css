@@ -1,0 +1,80 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Instrument Serif', 'Georgia', serif;
+
+  /* Norwegian-inspired palette */
+  --color-nordic-navy: #002F6C;
+  --color-arctic-blue: #0A4D8C;
+  --color-fjord-blue: #3B82C4;
+  --color-nordic-red: #EF2B2D;
+  --color-nordic-red-dark: #C41E20;
+  --color-nordic-gold: #C9A84C;
+  --color-snow: #F7F8FA;
+  --color-frost: #E5E7EB;
+  --color-charcoal: #1F2937;
+  --color-deep-navy: #001A3D;
+  --color-warm-gray: #F1F3F6;
+  --color-slate: #64748B;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply font-sans text-charcoal bg-white;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+
+  ::selection {
+    background-color: #002F6C22;
+    color: #002F6C;
+  }
+}
+
+@utility container-narrow {
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility accent-line {
+  display: block;
+  width: 3.5rem;
+  height: 3px;
+  background-color: #EF2B2D;
+  border-radius: 2px;
+}
+
+@utility section-padding {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@utility section-padding-lg {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+@utility card-shadow {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+@utility card-shadow-hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.06);
+}
