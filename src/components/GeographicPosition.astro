@@ -11,24 +11,316 @@ const countries = [
 
 <section class="bg-snow section-padding-lg overflow-hidden" id="geographic">
   <div class="container-narrow">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-      <!-- Text -->
-      <div>
-        <span class="accent-line mb-6" data-aos="fade-right"></span>
-        <h2 class="text-4xl sm:text-5xl font-serif text-nordic-navy leading-tight" data-aos="fade-right" data-aos-delay="100">
-          The Unified Nordic Gateway<br />
-          <span class="text-fjord-blue">to China.</span>
-        </h2>
-        <p class="mt-2 text-2xl sm:text-3xl font-serif text-charcoal/40 leading-tight" data-aos="fade-right" data-aos-delay="200">
-          The Strategic China Gateway<br />to the Nordics.
-        </p>
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="accent-line mx-auto mb-6" data-aos="fade-up"></span>
+      <h2 class="text-4xl sm:text-5xl font-serif text-nordic-navy leading-tight" data-aos="fade-up" data-aos-delay="100">
+        The Unified Nordic Gateway
+        <span class="text-fjord-blue">to China.</span>
+      </h2>
+      <p class="mt-2 text-2xl sm:text-3xl font-serif text-charcoal/40 leading-tight" data-aos="fade-up" data-aos-delay="150">
+        The Strategic China Gateway to the Nordics.
+      </p>
+      <p class="mt-6 text-base text-charcoal/60 leading-relaxed max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+        Instead of fragmented national consultants, we operate as one integrated Nordic platform — a single point of entry for cross-border expansion in either direction.
+      </p>
+    </div>
+  </div>
 
-        <p class="mt-8 text-base text-charcoal/60 leading-relaxed max-w-lg" data-aos="fade-right" data-aos-delay="300">
-          Instead of fragmented national consultants, we operate as one integrated Nordic platform — a single point of entry for cross-border expansion in either direction.
-        </p>
+  <!-- Full-width map visualization -->
+  <div class="w-full max-w-6xl mx-auto px-4" data-aos="fade-up" data-aos-delay="250">
+    <svg viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto block">
+      <defs>
+        <filter id="glow-blue" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="5" result="blur" />
+          <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+        <filter id="glow-red" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="6" result="blur" />
+          <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+        <filter id="soft-glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="12" result="blur" />
+          <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
 
-        <!-- Country tags -->
-        <div class="mt-10 flex flex-wrap gap-3" data-aos="fade-right" data-aos-delay="400">
+        <!-- Dot-grid pattern — larger dots, stronger opacity -->
+        <pattern id="dot-grid" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+          <circle cx="5" cy="5" r="1.8" fill="#002F6C" opacity="0.22" />
+        </pattern>
+
+        <!-- Hub-and-Spoke: 5 spokes converge on Nordic hub, 1 trunk to Beijing -->
+        <!-- Nordic hub at (240, 122) — center of Nordic capitals -->
+        <path id="spoke-rek" d="M41 81 Q 135 95, 240 122" fill="none" />
+        <path id="spoke-osl" d="M209 112 L240 122" fill="none" />
+        <path id="spoke-sto" d="M247 116 L240 122" fill="none" />
+        <path id="spoke-hel" d="M283 109 Q 265 113, 240 122" fill="none" />
+        <path id="spoke-cph" d="M219 143 L240 122" fill="none" />
+        <!-- Trunk arc: Nordic hub → Beijing -->
+        <path id="trunk-path" d="M240 122 C 380 20, 590 15, 753 259" fill="none" />
+
+        <!-- Region glows -->
+        <radialGradient id="nordic-glow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#3B82C4" stop-opacity="0.12" />
+          <stop offset="100%" stop-color="#3B82C4" stop-opacity="0" />
+        </radialGradient>
+        <radialGradient id="china-glow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#EF2B2D" stop-opacity="0.1" />
+          <stop offset="100%" stop-color="#EF2B2D" stop-opacity="0" />
+        </radialGradient>
+      </defs>
+
+      <!-- ========== DOT-MATRIX CONTINENTS (Natural Earth 110m) ========== -->
+      <g>
+        <path d="M79.7,63.1 L78.5,67.9 L84.3,72.9 L77.6,78.5 L62.8,83.6 L58.3,84.9 L51.6,83.9 L37.2,81.5 L42.3,78.3 L31.1,74.7 L40.2,73.2 L40,71.1 L29.2,69.3 L32.7,64.5 L40.4,63.4 L48.5,68.4 L56.3,64.4 L62.7,66.5 L71.1,62.6 L79.7,63.1 Z" fill="url(#dot-grid)" />
+        <path d="M119.4,167.9 L110.3,172.3 L103,171.2 L107.1,163.5 L104.5,156 L111.5,150.2 L115.3,146.7 L119.7,146.4 L125.2,151 L122.4,156.1 L123.3,161.3 L119.4,167.9 Z" fill="url(#dot-grid)" />
+        <path d="M138.8,120.8 L133.3,128.8 L138.6,127.8 L144.2,127.9 L142.9,133.9 L138.2,140.5 L143.6,141 L148.6,150.5 L152.1,151.6 L155.2,160.1 L156.7,163 L162.9,164.4 L162.3,169.1 L159.7,171.3 L161.7,175.1 L157.1,179 L150.2,178.9 L141.5,180.9 L139.1,179.5 L135.7,182.9 L130.9,182.1 L127.3,184.9 L124.6,183.4 L132.1,175.7 L136.7,174.1 L128.7,172.8 L127.2,169.9 L132.6,167.6 L129.8,163.6 L130.7,158.8 L138.4,159.5 L139.1,155.2 L135.6,150.5 L129.4,149.2 L128.1,147.2 L130,143.9 L128.3,141.9 L125.6,145.4 L125.3,138.3 L122.7,134.5 L124.5,126.9 L128.5,120.9 L132.6,121.5 L138.8,120.8 Z" fill="url(#dot-grid)" />
+        <path d="M219.5,143.2 L216.5,149.2 L211.1,145 L210.4,141.9 L217.9,139.5 L219.5,143.2 Z" fill="url(#dot-grid)" />
+        <path d="M201.7,249.5 L204.7,254.8 L204,264.5 L201.7,264.1 L199.6,266.5 L197.6,264.6 L197.4,255.7 L196.3,251.4 L199.1,251.8 L201.7,249.5 Z" fill="url(#dot-grid)" />
+        <path d="M203.5,242.6 L201.8,248.3 L199.4,246.8 L198.2,241.8 L199.3,239.1 L202.6,236.2 L203.5,242.6 Z" fill="url(#dot-grid)" />
+        <path d="M234.1,271.5 L232.3,277.3 L233,279.6 L231.9,283.4 L228,280.6 L225.4,279.8 L218.2,276.1 L218.9,272.3 L225,273 L230.2,272.2 L234.1,271.5 Z" fill="url(#dot-grid)" />
+        <path d="M276.2,290.2 L279,292.7 L283,292.2 L286.8,292.8 L286.7,294.1 L289.5,293.2 L288.8,295.3 L281.4,296 L281.5,294.8 L275.2,293.3 L276.2,290.2 Z" fill="url(#dot-grid)" />
+        <path d="M332.1,290.4 L328.6,293.6 L329,295 L329.2,295.5 L323.9,298.5 L321.4,297.6 L320.2,294.6 L322.6,294.4 L323,294.3 L323.7,292.5 L327.4,292.6 L332.1,290.4 Z" fill="url(#dot-grid)" />
+        <path d="M406.9,249 L409.5,254.2 L411.9,254.6 L413.4,256.6 L409.2,257.2 L408.3,262.9 L407.4,265.5 L405.5,267.2 L405.7,270.9 L407.3,276.3 L412.2,277.8 L415.8,281.6 L423.1,282.8 L431.1,280.9 L431.6,279.1 L430.6,273.9 L431.4,266.2 L427.4,263.7 L428.7,258.6 L425.3,258.2 L426.4,252 L431.3,253.8 L435.8,251.4 L432,247 L430.6,242.8 L426.4,244.7 L425.9,250.1 L424.3,245.3 L424,243.5 L425.3,240.4 L424.3,237.8 L418.3,235.3 L416,228.7 L413.2,226.8 L413,224.4 L418,225.1 L418.2,219.7 L422.6,218.5 L427.1,219.6 L428,212.4 L427.1,207.9 L421.9,208.2 L417.6,206.4 L411.6,209.7 L406.8,211.2 L404.5,215.6 L399.5,216.8 L394.4,224.4 L399,231.4 L398.5,236.4 L404.1,245.1 L406.9,249 Z" fill="url(#dot-grid)" />
+        <path d="M846.7,301.7 L847.4,304.2 L844.5,308.7 L842.4,306.3 L839.7,308 L838.4,312.3 L835,310.2 L835.1,306.7 L837.9,302.3 L840.8,303.2 L842.9,300.1 L846.7,301.7 Z" fill="url(#dot-grid)" />
+        <path d="M879.3,279.6 L877.4,285.5 L878.3,289.2 L875.6,294.4 L869,297.8 L860,298.3 L852.6,306.7 L849.2,303.9 L849,298.4 L840,300 L833.9,303.5 L827.9,303.6 L833.1,309 L829.7,321.6 L826.4,324.7 L823.9,321.8 L825.2,315.2 L821.9,313 L819.8,308 L824.7,305.7 L827.4,301.1 L832.5,297.2 L836.3,292.2 L846.6,290 L852.1,291.5 L857.4,278.4 L860.9,281.9 L868.4,274.5 L871.3,271.6 L874.6,262.6 L873.7,254.3 L875.9,249.6 L881.3,248.3 L884.1,258.5 L884,264.5 L879.2,271.9 L879.3,279.6 Z" fill="url(#dot-grid)" />
+        <path d="M894.4,227.6 L898,229.2 L901.6,226.1 L902.8,234.4 L895.2,236.4 L890.7,243.7 L882.6,238.7 L879.8,246.8 L874.1,246.9 L873.3,239.5 L875.9,233.8 L881.4,233.4 L882.9,223.2 L884.4,217.5 L890.4,225.2 L894.4,227.6 Z" fill="url(#dot-grid)" />
+        <path d="M893,179.1 L898.2,192.2 L890.6,189.7 L887.4,200.4 L892.5,208 L892.3,213.1 L888.4,208.7 L885,214.4 L884.1,208.2 L884.7,201 L884.1,193 L885.3,187.5 L885.5,177.6 L882.5,170.3 L882.9,160.2 L887.7,156.8 L885.7,153.4 L887.9,152.4 L889.3,157.3 L891.1,164.4 L890.9,171.6 L893,179.1 Z" fill="url(#dot-grid)" />
+        <path d="M778.2,417.2 L781.4,419.3 L783,417.4 L783.4,419.3 L782.6,422.3 L784.4,427.6 L783,433.8 L780,436.2 L779.2,442.2 L780.3,448 L783,448.9 L785.3,448 L791.7,452.1 L791.3,456.1 L792.9,457.9 L792.4,461.3 L788.4,457.6 L786.5,453.8 L785.2,456.5 L781.9,452.1 L777.2,453.1 L774.7,451.5 L774.9,448.5 L776.5,446.6 L775,444.9 L774.3,447.5 L771.8,443.3 L771,440.1 L770.8,433 L772.9,435.4 L773.4,423.9 L775.1,417.2 L778.2,417.2 Z" fill="url(#dot-grid)" />
+        <path d="M721.7,415.9 L717.3,419.5 L713.1,417.2 L712.9,410.8 L715.5,407.5 L721.1,405.4 L724,405.6 L725.2,408.4 L722.9,411.6 L721.7,415.9 Z" fill="url(#dot-grid)" />
+        <path d="M777.5,385.5 L775.3,391.6 L772.6,385.4 L772,379.9 L775,372.6 L779.1,367 L781.5,369.2 L780.6,373.7 L777.5,385.5 Z" fill="url(#dot-grid)" />
+        <path d="M572,508.1 L567.5,509.8 L565.1,503.9 L564.1,493.3 L566.5,481.3 L570,485.4 L572.4,490.6 L574.9,498.3 L574.1,506 L572,508.1 Z" fill="url(#dot-grid)" />
+        <path d="M450.2,31.6 L447.1,32.3 L430.3,31.3 L429,28 L419.7,26 L418.9,22 L424.2,20.5 L424,16.4 L434.2,10.1 L429.5,9.2 L441.8,2.8 L440.4,-0.6 L451.9,-4.5 L468.9,-9.2 L486,-10.6 L494.8,-13.4 L504.8,-14.3 L508.4,-11.4 L504.9,-9.1 L486.7,-5.4 L471,-1.9 L455,5.1 L447.4,12.3 L439.3,19.4 L440.3,25.5 L450.2,31.6 Z" fill="url(#dot-grid)" />
+        <path d="M704.4,-14.6 L705.8,-10.9 L710.5,-12.7 L725.5,-12.6 L737.1,-9 L741.3,-6.3 L740,-2.4 L734.3,-0.2 L720.8,3.9 L716.9,6.1 L723.3,7.1 L730.9,9 L735.5,7.6 L738.2,12.3 L740.4,10.4 L748.6,9.2 L765.1,10.4 L766.4,13.9 L787.9,15 L788.2,9.3 L799.1,10.6 L807.3,10.6 L815.6,14.5 L818,19.2 L814.9,22.3 L821.4,28.1 L829.5,31.1 L834.4,23.4 L842.7,26.7 L851.5,24.7 L861.4,27 L865.2,24.9 L873.6,25.9 L869.9,19.1 L876.7,15.9 L923.1,20.7 L924.6,113.3 L918.2,116.9 L902.5,115.7 L885.6,117.9 L868.9,132.3 L849.2,149.7 L857.3,150.6 L859.9,155.2 L864.8,156.9 L868.1,153.2 L873.8,153.7 L881.2,161.8 L881.4,168.1 L877.4,175.5 L876.9,184.3 L874.6,196.1 L866.9,206.8 L865.1,211.9 L858.1,220.5 L851.2,229 L847.9,233.4 L841,237.7 L837.8,237.8 L834.6,234.2 L827.7,239.6 L826.9,242.1 L824.9,241.6 L822.7,244.1 L821.1,246.6 L821.3,251.9 L818.7,253.6 L817.8,254.9 L815.8,257.1 L812.4,258.3 L810.2,260.3 L810,263.5 L809.4,264.3 L811.5,265.5 L814.4,268.7 L818.8,277.4 L820.1,282.2 L820.1,290.7 L818.2,294.8 L813.5,296.2 L809.4,299.3 L804.8,299.9 L804.2,295.9 L805.2,290.3 L802.9,282.6 L806.7,281.4 L803.2,275.1 L800.7,273.7 L800.1,275.1 L798.6,275.7 L798.4,274.3 L797,273.6 L795.7,272.4 L797.1,269.2 L798.3,268.3 L797.8,267 L799.1,263 L798.8,261.8 L795.8,261 L793.4,259 L786.2,261.1 L782.4,264.6 L776.9,266.6 L779.6,263.2 L778.5,260.3 L782.6,255.3 L779.9,251.5 L775.4,254.1 L769.6,259.2 L766.4,264 L761.4,264.3 L758.7,267.8 L761.4,272.8 L765.7,274 L765.8,277.3 L769.9,279.5 L775.7,274.2 L780.2,277.1 L783.6,277.3 L784.4,281.1 L777.1,283.2 L774.7,287.2 L769.7,290.9 L767.1,296 L772.6,300.1 L774.6,307.4 L777.7,314.1 L781.2,319.8 L781.2,325.3 L777.9,327.3 L779.2,331.3 L782.2,333.5 L781.4,339.6 L780.1,345.4 L777.2,346.1 L773.5,354.1 L769.3,363.8 L764.5,372.6 L757.4,379.4 L750.3,385.6 L744.5,386.5 L741.4,389.7 L739.6,387.3 L736.7,391 L729.5,394.7 L724,395.8 L722.3,403.6 L719.4,404.1 L718.1,398.7 L719.3,395.9 L712.4,393.5 L710,394.7 L703.1,401 L698.8,408 L697.7,413.1 L701.6,420.9 L706.4,430.5 L711.1,435.1 L714.2,441 L716.6,454.7 L715.9,467.7 L711.6,472.6 L705.7,477.3 L701.5,483.5 L695.1,490.3 L693.2,485.6 L694.7,480.6 L690.9,476.4 L686.6,475.3 L684.5,471.5 L681.9,463.9 L677.2,460.5 L672.8,460.6 L673.6,454.8 L669.1,454.8 L668.7,463 L665.9,473.7 L664.2,480.3 L664.6,485.6 L667.9,485.8 L670,492.6 L670.9,499 L673.8,503.2 L676.9,504.1 L679.6,507.9 L680.8,508.6 L683.8,513.1 L669.6,514.6 L670.1,509.2 L669,506.1 L667,503.3 L666.1,499.6 L663.4,495.4 L660.9,491.9 L660,496.3 L659.1,492.2 L659.6,487.6 L661.1,480.5 L660.6,475 L662.2,469.4 L660.5,465 L660.9,456.9 L658.8,453.1 L657.1,444.3 L656.2,434.9 L654,428.8 L650.6,432.5 L644.8,437.8 L641.9,437.1 L638.7,435.4 L640.5,426.3 L639.4,419.3 L635.4,410.8 L636,408.2 L633,407.2 L629.3,401.2 L627.9,397.3 L627.6,393.6 L626.6,390 L624.4,385.7 L619.7,385.4 L620.2,388.5 L618.5,392.6 L616.4,391.1 L615.6,392.4 L614.2,391.6 L612.2,391 L611.4,393.7 L607.9,393.6 L601.6,395.1 L601.9,400.7 L599.1,405 L591.7,410 L586,418.7 L582.1,423.4 L577,428.2 L577,431.6 L574.4,433.4 L569.8,436 L567.4,436.4 L565.8,442.1 L566.9,451.7 L567.2,457.8 L565,464.8 L565,477.4 L562.3,477.7 L560,483.4 L561.5,485.8 L556.9,487.9 L555.1,492.9 L553.1,495 L548.2,488.1 L545.8,477.8 L543.8,470.3 L542,466.8 L539.3,459.8 L538,450.5 L537.1,445.9 L532.5,435.8 L530.3,421.4 L528.8,412 L528.8,403.1 L527.8,396.1 L520.3,400.6 L516.7,399.7 L510,390.7 L512.5,388.1 L510.9,385.2 L504.9,378.9 L501.1,377 L499.6,371.7 L495.6,366.1 L486.2,367.5 L477.8,367.6 L470.6,368.7 L460.9,366.4 L455.3,364.7 L449.5,363.8 L447.3,354.7 L444.8,353.4 L440.9,354.7 L435.7,358.3 L429.4,355.8 L424.2,350.2 L419.3,348.1 L415.8,341.1 L412,331.2 L409.3,332.4 L406,330 L404.1,332.8 L401,332.5 L402.1,335.7 L401.6,337.4 L403.3,343 L405.3,349.4 L407.8,351.1 L408.7,353.6 L412.2,356.8 L412.5,359.8 L412,362.3 L412.7,364.7 L414.1,366.8 L414.8,369.2 L415.6,371 L415.3,365.7 L416.6,361.8 L418,361 L419.6,363.3 L419.7,367.6 L418.6,372 L419.6,374.8 L420.5,374.4 L420.7,376.5 L424.7,375.3 L428.9,375.5 L432,375.7 L435.6,370.7 L439.4,366 L442.7,361.4 L444.1,358.9 L444.8,359.6 L444.3,362.6 L443.6,364 L444.3,369.8 L446.6,374.8 L449.5,377.5 L453.3,378.5 L456.3,379.8 L458.6,384.1 L460,386.5 L461.9,387.4 L461.9,389.1 L460,393.5 L459.2,395.6 L457,397.9 L455.1,403 L452.7,402.6 L451.7,404.4 L450.9,408.1 L451.5,413 L451,413.9 L448.6,413.9 L445.4,416.7 L444.9,420.3 L443.7,421.8 L440.5,421.8 L438.5,423.6 L438.6,426.6 L436.1,428.7 L433.2,428 L429.8,430.5 L427.4,430.9 L423.7,432.9 L422.7,436.1 L422.6,438.7 L417.5,441.8 L409.2,445.2 L404.6,450.4 L402.4,450.8 L400.8,450.4 L397.8,453.5 L394.5,454.9 L390.2,455.3 L388.9,455.7 L387.8,457.6 L386.5,458.2 L385.7,460.1 L383.1,459.9 L381.5,460.9 L377.9,460.5 L376.6,456.2 L376.7,452.2 L375.9,450 L374.9,444.5 L373.4,441.5 L374.4,441.1 L373.9,437.8 L374.5,436.3 L374.3,433.1 L373.6,430 L372.1,427.7 L371.7,424.8 L369,422.2 L366.3,416 L364.8,409.9 L361.3,404.9 L359,403.7 L355.6,396.6 L355,391.5 L355.2,387.1 L352.2,378.9 L349.8,376 L347.1,374.5 L345.4,370.3 L345.6,368.6 L344.2,364.8 L342.7,363.1 L340.7,357.6 L337.6,351.7 L335,346.6 L332.4,346.6 L333.2,342.6 L333.4,340 L334.1,337.1 L333.9,336 L332.4,339 L331.3,344.5 L329.9,348.4 L328.7,349.7 L327,347.3 L324.7,344 L321,333.4 L320.5,334.1 L322.6,341.9 L325.8,349.3 L329.7,360.8 L331.6,364.8 L333.2,369 L337.8,377.2 L336.8,378.4 L337,383.2 L343,389.9 L343.9,391.4 L345.5,398.6 L344.4,400 L345.2,407.6 L347,416.4 L349,418.2 L351.8,420.9 L354.8,429.5 L356.2,436.3 L359,439.9 L366.1,446.8 L368.9,451 L371.7,455.3 L373.3,457.8 L375.8,460.1 L377.1,462.4 L376.9,465.4 L374,467.2 L376.2,469.2 L377.8,470.6 L378.9,473.6 L381.2,476.7 L383.7,476.7 L388.6,474.8 L394.2,474 L398.7,471.7 L401.3,471.2 L403.1,469.8 L406,469.6 L407.7,469.4 L410,468.3 L412.8,467.6 L415.2,465.1 L417.1,465 L417.3,467.1 L416.8,471.4 L416.8,475.3 L415.7,477.9 L414.3,485.9 L411.8,494.2 L408.6,503.6 L404.2,514.4 L180.2,512.4 L176.5,507.5 L172.7,507.6 L168.1,507.6 L163.9,508.5 L159.7,510.1 L151.7,514.4 L148.8,516.9 L133.7,515.6 L130.4,515.7 L103.3,512.5 L98.9,508.5 L95.5,503.7 L94.1,503.2 L90.4,500.2 L87.7,496.3 L86.8,493.6 L86.2,488.1 L83.9,483.7 L81.9,480.8 L80.6,479.9 L79.3,478.4 L78.7,475.2 L78,473.5 L76.5,472.3 L73.7,469.2 L71.6,468.7 L70.4,466.7 L70.4,465.5 L68.8,464 L68.5,462.4 L67.7,456.7 L68.3,453.5 L66.2,447.7 L63.6,445.1 L65.9,443.7 L68.4,438.5 L69.6,434.7 L69.2,430.7 L70.6,427.1 L71.2,420.1 L70.7,412.8 L70.1,409.2 L70.6,405.5 L69.2,402 L66.5,398.8 L66.8,395.7 L67,392.2 L69,390.2 L70.7,386.4 L70.3,383.9 L72.1,378.7 L75,374 L76.7,372.8 L78,368.5 L78.2,364.5 L80,360 L83.4,357.3 L86.7,349.7 L89.4,346.8 L94.2,346 L98.2,340.9 L100.8,339 L105.1,332.8 L103.8,323.6 L105.8,317.3 L106.5,313.4 L109.8,308.4 L114.9,305 L118.7,302 L122.2,294.3 L123.8,289.8 L127.6,289.8 L130.7,292.9 L135.6,292.4 L140.9,294.1 L143.1,294.1 L148.1,290.1 L153.6,288.8 L156.9,285.8 L161.8,283.5 L170.5,282.2 L179.1,281.6 L181.6,282.7 L186.5,279.8 L192,279.7 L194.1,281.5 L197.6,281 L203.2,278 L206.8,278.9 L206.6,282.7 L211,279.9 L211.4,281.4 L208.8,285 L208.8,288.4 L210.5,290.2 L209.9,296.6 L206.5,300.3 L207.5,304.4 L210.1,304.5 L211.4,308 L213.4,309.1 L219.4,311.7 L221.6,311 L225.9,312.3 L232.7,315.6 L235.1,322.1 L239.7,323.6 L247,326.7 L252.4,330.3 L255,328.4 L257.4,325 L256.2,319.4 L257.8,315.8 L261.5,312.3 L265.1,311.3 L272,312.8 L273.8,316.1 L275.7,316.2 L277.3,317.4 L282.5,318.3 L283.7,320.7 L290.5,320.6 L295.5,322.6 L300.6,324.7 L303,325.9 L306.9,323.5 L309.1,321.4 L313.6,320.8 L317.3,321.7 L318.7,325.4 L319.8,323 L324,324.7 L328,325.2 L330.5,323.3 L332,320.9 L331.7,320.5 L333,317 L334.1,311.4 L334.8,309.6 L334.9,309.5 L336.8,303.5 L339.3,298.3 L339.4,298 L338.9,292.4 L340.2,289.3 L338.3,286 L340.3,283.2 L337.1,283.8 L332.8,282.1 L329.3,286.4 L321.5,287.2 L317.3,283.2 L311.8,283 L310.6,286.1 L307,286.9 L302.1,283 L296.4,283.1 L293.4,275.8 L289.6,271.7 L292.1,266 L288.9,262.4 L294.6,255.4 L302.5,255.1 L304.7,249.5 L314.5,250.4 L320.6,245.6 L326.6,243.6 L335.1,243.4 L344.1,248.6 L351.5,251.5 L357.5,250.3 L361.9,251 L368,247.1 L368.8,244 L367.5,238.9 L364.5,236.2 L361.7,235.4 L359.8,233.1 L353.2,226.9 L347.3,224.1 L342.9,219.7 L346.6,218.6 L350.9,212.4 L348,209.5 L355.6,206.4 L355.5,204.8 L350.9,206 L346.8,206.6 L343.3,209 L338.5,209.4 L334.1,212.1 L334.4,216.7 L336.9,218.5 L342.2,218.1 L341.1,220.7 L335.5,222 L328.5,226.3 L325.7,224.8 L326.8,221.3 L321.2,219.1 L322.1,217.7 L327,215.2 L325.5,213.6 L317.5,211.7 L317.2,208.9 L312.4,209.8 L310.5,213.9 L306.5,219.4 L306.7,221.3 L304.2,222.9 L302.6,222.2 L301.2,231.1 L298.5,234.1 L296.6,239.4 L298.3,243.6 L298.9,246.5 L303.4,248.9 L302.4,250.7 L296.3,251.1 L294.1,253.4 L289.8,257.3 L288.2,253.9 L288.3,252.4 L285.2,252.2 L282.5,251.5 L276.2,253.4 L279.8,257.5 L277.2,258.7 L274.3,258.7 L271.6,254.9 L270.6,256.6 L271.8,261 L274.4,264.4 L272.4,266.1 L275.3,269.5 L277.8,271.6 L277.9,275.8 L273.2,273.8 L274.7,277.6 L271.4,278.4 L273.4,284.9 L269.9,285 L265.7,281.8 L263.8,275.9 L262.9,270.9 L260.9,267.5 L258.3,263.3 L257.9,261.2 L257,260.7 L256.9,259.1 L254.1,256.6 L253.6,253.1 L254.1,248.1 L254.8,245.8 L253.9,244.6 L252.8,244 L251.4,241.6 L249.2,240.1 L244.3,237.4 L241.4,234.8 L236.7,232.6 L232.3,227.1 L233.4,226.6 L231,223.5 L230.9,221 L227.6,219.8 L226,223 L224.5,220.5 L224.6,218 L224.8,217.8 L226,217.2 L221.9,216.1 L217.7,218.7 L218,222.4 L217.3,224.5 L219,228.2 L223.9,232 L226.4,238.1 L232.2,244 L236.2,244 L237.4,245.6 L236,247.1 L240.6,249.7 L244.4,252 L248.8,255.8 L249.3,257.2 L248.4,259.9 L245.5,256.4 L241,255.2 L238.9,260 L242.6,262.7 L242,266.6 L239.8,267 L237.1,273.3 L234.9,273.9 L235,271.6 L236,267.7 L237.1,266.1 L235.1,261.8 L233.6,258.1 L231.4,257.2 L229.9,254 L226.6,252.7 L224.4,249.7 L220.6,249.2 L216.5,245.9 L211.8,241.1 L208.3,236.8 L206.7,229.5 L204.2,228.7 L200,226.2 L197.6,227.2 L194.7,230.6 L192.5,231.2 L187.9,235.4 L177.7,233.4 L170.2,235.8 L169.6,240.2 L169.9,244.5 L165,249.4 L158.5,251 L158,253.5 L154.8,257.5 L152.9,263.6 L154.9,267.8 L151.9,271.1 L150.8,275.9 L146.9,277.3 L143.2,283 L136.7,283.1 L131.8,283 L128.6,285.6 L126.6,288.4 L124.1,287.8 L122.2,285.3 L120.8,281 L116,279.9 L113.9,281.8 L111.2,280.8 L108.5,281.6 L109.3,275.8 L108.8,271.3 L106.5,270.6 L105.3,267.8 L105.7,263 L107.8,260.3 L108.1,257.3 L109.2,252.8 L109.1,249.7 L108,247.1 L107.8,244.6 L108.1,239.3 L106,236.1 L113.3,230.8 L119.5,232.1 L126.5,232.1 L131.9,233.3 L136.2,232.9 L144.5,233.2 L147.2,228.8 L148.1,214 L142.8,206.3 L139,202.6 L131.2,199.7 L130.7,194.3 L137.3,192.7 L146,194.6 L144.3,186.3 L149.2,189.4 L161.2,183.7 L162.7,177.6 L167.2,176.1 L171.3,174.7 L174,172.6 L178.5,161.8 L185.5,158.7 L189.8,158.9 L190.8,157.3 L195.1,156.9 L196.1,158.6 L199.5,154.9 L198.4,152.2 L198.1,148 L196,143.9 L195.9,136.3 L196.7,134.3 L198.2,132.1 L202.8,131.7 L204.6,129.6 L208.7,127.5 L208.5,131.3 L207,133.7 L207.6,135.8 L210.4,136.9 L209.1,139.7 L207.6,138.9 L203.9,144.2 L205.3,147.8 L205.4,150.7 L210.6,152.4 L210.5,155 L215.8,153.6 L218.7,151.6 L224.5,154.5 L226.9,156.9 L230.4,154.7 L238.4,151.3 L244.9,148.8 L250.1,150 L250.4,151.8 L255.4,151.9 L256.6,148.7 L263.7,146.3 L262.6,140.1 L262.8,134.5 L265.3,129.9 L270.1,127.4 L274.2,132.9 L278.3,132.7 L279.3,127.1 L279.9,122.7 L278,123.6 L274.8,121 L274.3,116.8 L280.8,114.7 L287.3,113.6 L292.9,114.9 L298.2,114.6 L304,110.6 L298.6,107.1 L289.3,107.6 L280.3,110.3 L271.9,111.9 L268.9,107.9 L263.9,105.5 L265.1,98.2 L262.6,91.5 L265,87.2 L269.7,82.6 L281.5,74.6 L284.9,73 L284.4,69.9 L277.2,66.4 L268.4,68.5 L263.4,73.7 L264.2,78.2 L256,84.1 L246.1,90.5 L242.3,100.9 L246,106.1 L250.9,110.2 L246.2,118.5 L240.8,120.2 L238.9,132.6 L236,139.5 L229.7,138.8 L226.8,144.7 L220.8,145 L219.2,138 L214.9,129.7 L211,119.2 L207.5,114.7 L197.4,123.2 L190.5,125 L183.4,121.2 L181.6,113.3 L180,96.2 L184.7,91.5 L198.3,85.3 L208.4,77.6 L217.8,67.3 L230.2,53.1 L238.8,47.5 L252.9,38.3 L264.2,35 L272.7,35.4 L280.5,29.3 L289.9,29.6 L299.1,28.2 L315.2,33.6 L308.6,35.5 L314.2,40.2 L319.5,37.6 L328,42.1 L342.1,43.8 L361.5,52.2 L365.5,55.7 L365.8,60.6 L360.1,64.5 L351.7,66.5 L328.7,60.9 L324.9,61.8 L333.3,67.2 L334,78.2 L340.6,80.4 L344.6,82.3 L345.3,78.8 L342.1,75.5 L345.5,72.8 L357.9,77.4 L362.2,75.6 L358.8,70.2 L370.8,62.9 L375.5,63.4 L380.3,66 L383.3,60.9 L379,56.5 L381.5,52.1 L377.8,47.5 L392.1,49.8 L395.1,54 L388.6,54.9 L388.6,59 L392.7,61.5 L400.6,59.9 L401.9,55.2 L412.6,51.7 L430.5,45.4 L434.4,45.7 L429.4,50.2 L435.7,51 L439.4,48.5 L449.1,48.2 L456.7,45.2 L462.6,49.6 L468.4,44.7 L463,40.5 L465.7,38 L480.9,40.3 L488,42.6 L506.6,51 L510.1,47.1 L504.8,43.2 L504.7,41.7 L498.5,40.9 L500.2,37.4 L497.4,31.7 L497.3,29.3 L506.8,22.6 L510.2,15.9 L514,14.5 L527.6,16.4 L528.7,20.5 L523.8,26.5 L527,28.9 L528.6,34 L527.5,44.2 L533.1,48.7 L530.9,53.6 L520.9,64.1 L526.7,65.2 L528.8,62.5 L534.5,60.6 L535.8,57 L540.3,53.5 L537.3,49.3 L539.7,44.4 L534,43.8 L532.8,39.7 L536.9,32.3 L530.2,26.2 L539.4,21.3 L538.2,16 L540.8,15.8 L543.5,19.9 L541.5,27.1 L547,28.4 L544.6,23.1 L553.3,20.2 L563.9,19.8 L573.4,24 L568.9,17.8 L568.3,10 L577.3,8.5 L589.7,8.8 L600.8,7.9 L596.6,4 L602.6,-0.9 L608.5,-1.1 L618.5,-4.7 L632.1,-5.7 L633.8,-7.7 L647.3,-8.4 L651.5,-6.8 L663,-10.7 L672.5,-10.6 L673.9,-13.7 L678.8,-16.9 L691,-19.9 L699.8,-17.5 L692.8,-15.7 L704.4,-14.6 Z" fill="url(#dot-grid)" />
+      </g>
+
+      <!-- ========== REGION GLOWS ========== -->
+      <ellipse cx="230" cy="120" rx="100" ry="80" fill="url(#nordic-glow)" />
+      <ellipse cx="730" cy="300" rx="140" ry="140" fill="url(#china-glow)" />
+
+      <!-- ========== HUB-AND-SPOKE + TRUNK ROUTE ========== -->
+
+      <!-- ===== SPOKE LINES (city → Nordic hub) ===== -->
+
+      <!-- Reykjavik spoke (draws first — longest) -->
+      <use href="#spoke-rek" stroke="#002F6C" stroke-width="0.8" stroke-opacity="0.05" />
+      <use href="#spoke-rek" stroke="#3B82C4" stroke-width="1.2" stroke-opacity="0.3"
+           stroke-dasharray="1" stroke-dashoffset="1" pathLength="1">
+        <animate attributeName="stroke-dashoffset" from="1" to="0" dur="1s" fill="freeze" begin="0.3s" />
+      </use>
+      <circle r="2" fill="#3B82C4" opacity="0">
+        <animate attributeName="opacity" values="0;0;0.7;0.7;0" dur="4s" repeatCount="indefinite" begin="3.5s" />
+        <animateMotion dur="4s" repeatCount="indefinite" begin="3.5s">
+          <mpath href="#spoke-rek" />
+        </animateMotion>
+      </circle>
+
+      <!-- Oslo spoke -->
+      <use href="#spoke-osl" stroke="#002F6C" stroke-width="0.8" stroke-opacity="0.05" />
+      <use href="#spoke-osl" stroke="#3B82C4" stroke-width="1.2" stroke-opacity="0.35"
+           stroke-dasharray="1" stroke-dashoffset="1" pathLength="1">
+        <animate attributeName="stroke-dashoffset" from="1" to="0" dur="0.6s" fill="freeze" begin="0.6s" />
+      </use>
+      <circle r="2" fill="#3B82C4" opacity="0">
+        <animate attributeName="opacity" values="0;0;0.7;0.7;0" dur="3.5s" repeatCount="indefinite" begin="4s" />
+        <animateMotion dur="3.5s" repeatCount="indefinite" begin="4s">
+          <mpath href="#spoke-osl" />
+        </animateMotion>
+      </circle>
+
+      <!-- Stockholm spoke -->
+      <use href="#spoke-sto" stroke="#002F6C" stroke-width="0.8" stroke-opacity="0.05" />
+      <use href="#spoke-sto" stroke="#3B82C4" stroke-width="1.2" stroke-opacity="0.35"
+           stroke-dasharray="1" stroke-dashoffset="1" pathLength="1">
+        <animate attributeName="stroke-dashoffset" from="1" to="0" dur="0.6s" fill="freeze" begin="0.8s" />
+      </use>
+      <circle r="2" fill="#3B82C4" opacity="0">
+        <animate attributeName="opacity" values="0;0;0.7;0.7;0" dur="3.5s" repeatCount="indefinite" begin="4.5s" />
+        <animateMotion dur="3.5s" repeatCount="indefinite" begin="4.5s">
+          <mpath href="#spoke-sto" />
+        </animateMotion>
+      </circle>
+
+      <!-- Helsinki spoke -->
+      <use href="#spoke-hel" stroke="#002F6C" stroke-width="0.8" stroke-opacity="0.05" />
+      <use href="#spoke-hel" stroke="#3B82C4" stroke-width="1.2" stroke-opacity="0.35"
+           stroke-dasharray="1" stroke-dashoffset="1" pathLength="1">
+        <animate attributeName="stroke-dashoffset" from="1" to="0" dur="0.7s" fill="freeze" begin="1.0s" />
+      </use>
+      <circle r="2" fill="#3B82C4" opacity="0">
+        <animate attributeName="opacity" values="0;0;0.7;0.7;0" dur="3.5s" repeatCount="indefinite" begin="5s" />
+        <animateMotion dur="3.5s" repeatCount="indefinite" begin="5s">
+          <mpath href="#spoke-hel" />
+        </animateMotion>
+      </circle>
+
+      <!-- Copenhagen spoke -->
+      <use href="#spoke-cph" stroke="#002F6C" stroke-width="0.8" stroke-opacity="0.05" />
+      <use href="#spoke-cph" stroke="#3B82C4" stroke-width="1.2" stroke-opacity="0.35"
+           stroke-dasharray="1" stroke-dashoffset="1" pathLength="1">
+        <animate attributeName="stroke-dashoffset" from="1" to="0" dur="0.7s" fill="freeze" begin="1.2s" />
+      </use>
+      <circle r="2" fill="#3B82C4" opacity="0">
+        <animate attributeName="opacity" values="0;0;0.7;0.7;0" dur="3.5s" repeatCount="indefinite" begin="5.5s" />
+        <animateMotion dur="3.5s" repeatCount="indefinite" begin="5.5s">
+          <mpath href="#spoke-cph" />
+        </animateMotion>
+      </circle>
+
+      <!-- ===== NORDIC HUB MARKER ===== -->
+      <g>
+        <circle cx="240" cy="122" r="10" fill="#3B82C4" opacity="0.06" />
+        <circle cx="240" cy="122" r="5" fill="#3B82C4" opacity="0.9" />
+        <circle cx="240" cy="122" r="2.5" fill="#F7F8FA" />
+      </g>
+
+      <!-- ===== TRUNK ARC (Nordic hub → Beijing) ===== -->
+
+      <!-- Faint static trail -->
+      <use href="#trunk-path" stroke="#002F6C" stroke-width="1.2" stroke-opacity="0.07" />
+
+      <!-- Draw-on (starts after spokes finish) -->
+      <use href="#trunk-path" stroke="#3B82C4" stroke-width="2.2" stroke-opacity="0.5"
+           stroke-dasharray="1" stroke-dashoffset="1" pathLength="1">
+        <animate attributeName="stroke-dashoffset" from="1" to="0" dur="2.8s" fill="freeze" begin="2s" />
+      </use>
+
+      <!-- Glow layer -->
+      <use href="#trunk-path" stroke="#3B82C4" stroke-width="7" stroke-opacity="0.1" filter="url(#soft-glow)"
+           stroke-dasharray="1" stroke-dashoffset="1" pathLength="1">
+        <animate attributeName="stroke-dashoffset" from="1" to="0" dur="2.8s" fill="freeze" begin="2s" />
+      </use>
+
+      <!-- Trunk forward particle 1 (Nordic → China) -->
+      <circle r="3.5" fill="#3B82C4" opacity="0" filter="url(#glow-blue)">
+        <animate attributeName="opacity" values="0;0;0.9;0.9;0" dur="5s" repeatCount="indefinite" begin="5s" />
+        <animateMotion dur="5s" repeatCount="indefinite" begin="5s">
+          <mpath href="#trunk-path" />
+        </animateMotion>
+      </circle>
+
+      <!-- Trunk forward particle 2 (offset) -->
+      <circle r="2.5" fill="#002F6C" opacity="0" filter="url(#glow-blue)">
+        <animate attributeName="opacity" values="0;0;0.6;0.6;0" dur="5s" repeatCount="indefinite" begin="7s" />
+        <animateMotion dur="5s" repeatCount="indefinite" begin="7s">
+          <mpath href="#trunk-path" />
+        </animateMotion>
+      </circle>
+
+      <!-- Trunk reverse particle (China → Nordic hub) -->
+      <circle r="3" fill="#EF2B2D" opacity="0" filter="url(#glow-red)">
+        <animate attributeName="opacity" values="0;0;0.8;0.8;0" dur="6s" repeatCount="indefinite" begin="6s" />
+        <animateMotion dur="6s" repeatCount="indefinite" begin="6s" keyPoints="1;0" keyTimes="0;1" calcMode="linear">
+          <mpath href="#trunk-path" />
+        </animateMotion>
+      </circle>
+
+      <!-- ========== CITY MARKERS — NORDICS ========== -->
+
+      <!-- Copenhagen (primary Nordic hub) -->
+      <g>
+        <circle cx="219" cy="143" r="6" fill="none" stroke="#3B82C4" stroke-width="1" opacity="0">
+          <animate attributeName="r" values="6;30" dur="3s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0.55;0" dur="3s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="219" cy="143" r="6" fill="none" stroke="#3B82C4" stroke-width="0.8" opacity="0">
+          <animate attributeName="r" values="6;30" dur="3s" repeatCount="indefinite" begin="1s" />
+          <animate attributeName="opacity" values="0.4;0" dur="3s" repeatCount="indefinite" begin="1s" />
+        </circle>
+        <circle cx="219" cy="143" r="6" fill="none" stroke="#3B82C4" stroke-width="0.6" opacity="0">
+          <animate attributeName="r" values="6;30" dur="3s" repeatCount="indefinite" begin="2s" />
+          <animate attributeName="opacity" values="0.25;0" dur="3s" repeatCount="indefinite" begin="2s" />
+        </circle>
+        <circle cx="219" cy="143" r="5.5" fill="#3B82C4" />
+        <circle cx="219" cy="143" r="2.5" fill="#F7F8FA" />
+        <text x="219" y="165" text-anchor="middle" fill="#002F6C" font-size="11" font-family="Inter, sans-serif" font-weight="600" opacity="0.8">COPENHAGEN</text>
+      </g>
+
+      <!-- Oslo -->
+      <g>
+        <circle cx="209" cy="112" r="4" fill="#3B82C4" opacity="0.85" />
+        <circle cx="209" cy="112" r="2" fill="#F7F8FA" />
+        <text x="189" y="106" text-anchor="end" fill="#002F6C" font-size="10" font-family="Inter, sans-serif" font-weight="500" opacity="0.65">OSLO</text>
+      </g>
+
+      <!-- Stockholm -->
+      <g>
+        <circle cx="247" cy="116" r="4" fill="#3B82C4" opacity="0.85" />
+        <circle cx="247" cy="116" r="2" fill="#F7F8FA" />
+        <text x="247" y="106" text-anchor="middle" fill="#002F6C" font-size="10" font-family="Inter, sans-serif" font-weight="500" opacity="0.65">STOCKHOLM</text>
+      </g>
+
+      <!-- Helsinki -->
+      <g>
+        <circle cx="283" cy="109" r="4" fill="#3B82C4" opacity="0.85" />
+        <circle cx="283" cy="109" r="2" fill="#F7F8FA" />
+        <text x="305" y="113" text-anchor="start" fill="#002F6C" font-size="10" font-family="Inter, sans-serif" font-weight="500" opacity="0.65">HELSINKI</text>
+      </g>
+
+      <!-- Reykjavik -->
+      <g>
+        <circle cx="41" cy="81" r="3.5" fill="#3B82C4" opacity="0.75" />
+        <circle cx="41" cy="81" r="1.5" fill="#F7F8FA" />
+        <text x="60" y="85" text-anchor="start" fill="#002F6C" font-size="9" font-family="Inter, sans-serif" font-weight="500" opacity="0.55">REYKJAVIK</text>
+      </g>
+
+      <!-- ========== CITY MARKERS — CHINA ========== -->
+
+      <!-- Beijing (primary China hub) -->
+      <g>
+        <circle cx="753" cy="259" r="6" fill="none" stroke="#EF2B2D" stroke-width="1" opacity="0">
+          <animate attributeName="r" values="6;32" dur="3.5s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0.5;0" dur="3.5s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="753" cy="259" r="6" fill="none" stroke="#EF2B2D" stroke-width="0.8" opacity="0">
+          <animate attributeName="r" values="6;32" dur="3.5s" repeatCount="indefinite" begin="1.2s" />
+          <animate attributeName="opacity" values="0.35;0" dur="3.5s" repeatCount="indefinite" begin="1.2s" />
+        </circle>
+        <circle cx="753" cy="259" r="6" fill="none" stroke="#EF2B2D" stroke-width="0.6" opacity="0">
+          <animate attributeName="r" values="6;32" dur="3.5s" repeatCount="indefinite" begin="2.4s" />
+          <animate attributeName="opacity" values="0.2;0" dur="3.5s" repeatCount="indefinite" begin="2.4s" />
+        </circle>
+        <circle cx="753" cy="259" r="6" fill="#EF2B2D" />
+        <circle cx="753" cy="259" r="3" fill="#F7F8FA" />
+        <text x="753" y="283" text-anchor="middle" fill="#002F6C" font-size="11" font-family="Inter, sans-serif" font-weight="600" opacity="0.8">BEIJING</text>
+      </g>
+
+      <!-- Shanghai -->
+      <g>
+        <circle cx="779" cy="323" r="4" fill="#EF2B2D" opacity="0.75" />
+        <circle cx="779" cy="323" r="2" fill="#F7F8FA" />
+        <text x="779" y="343" text-anchor="middle" fill="#002F6C" font-size="10" font-family="Inter, sans-serif" font-weight="500" opacity="0.65">SHANGHAI</text>
+      </g>
+
+      <!-- ========== GUDENAPATH HUB (midpoint of trunk arc) ========== -->
+      <g>
+        <circle cx="484" cy="60" r="32" fill="#EF2B2D" opacity="0.04" filter="url(#soft-glow)" />
+        <circle cx="484" cy="60" r="18" fill="#EF2B2D" opacity="0.06" />
+
+        <circle cx="484" cy="60" r="14" fill="none" stroke="#002F6C" stroke-width="0.6" opacity="0.15" stroke-dasharray="2.5 2.5">
+          <animateTransform attributeName="transform" type="rotate" from="0 484 60" to="360 484 60" dur="20s" repeatCount="indefinite" />
+        </circle>
+
+        <circle cx="484" cy="60" r="6.5" fill="#EF2B2D" filter="url(#glow-red)" />
+        <circle cx="484" cy="60" r="3" fill="#F7F8FA" />
+
+        <text x="484" y="43" text-anchor="middle" fill="#002F6C" font-size="10" font-family="Inter, sans-serif" font-weight="700" letter-spacing="0.15em" opacity="0.8">GUDENAPATH</text>
+        <text x="484" y="31" text-anchor="middle" fill="#EF2B2D" font-size="7.5" font-family="Inter, sans-serif" font-weight="600" letter-spacing="0.1em" opacity="0.55">GROWTH HUB</text>
+      </g>
+
+      <!-- ========== REGION LABELS ========== -->
+      <text x="185" y="200" text-anchor="middle" fill="#3B82C4" font-size="12" font-family="Inter, sans-serif" font-weight="700" letter-spacing="0.25em" opacity="0.3">NORDICS</text>
+      <text x="710" y="410" text-anchor="middle" fill="#EF2B2D" font-size="12" font-family="Inter, sans-serif" font-weight="700" letter-spacing="0.25em" opacity="0.25">CHINA</text>
+
+    </svg>
+  </div>
+
+  <!-- Bottom content: country tags + operational reach -->
+  <div class="container-narrow mt-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+      <!-- Country tags -->
+      <div data-aos="fade-up" data-aos-delay="300">
+        <div class="flex flex-wrap gap-3">
           {countries.map((country) => (
             <span class:list={[
               "inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg border transition-colors duration-300",
@@ -41,72 +333,27 @@ const countries = [
             </span>
           ))}
         </div>
-
-        <!-- Nordic Advisory Council -->
-        <div class="mt-10 p-6 rounded-xl bg-white border border-frost card-shadow" data-aos="fade-right" data-aos-delay="500">
-          <h4 class="text-xs font-sans font-semibold tracking-[0.2em] uppercase text-nordic-red mb-4">
-            Our Operational Reach
-          </h4>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {[
-              'Nordic Advisory Council of senior industry leaders',
-              'Strategic partners in each Nordic country',
-              'Local ambassadors with institutional relationships',
-              'Government & trade authority networks',
-              'China-based team with Nordic-side coordination',
-              'University & research institution connections',
-            ].map((item) => (
-              <div class="flex items-start gap-2 text-sm text-charcoal/60">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-fjord-blue mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                {item}
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
 
-      <!-- Map visualization -->
-      <div class="relative" data-aos="fade-left" data-aos-delay="200">
-        <div class="relative aspect-square max-w-md mx-auto">
-          <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
-            <circle cx="200" cy="200" r="180" fill="none" stroke="#E5E7EB" stroke-width="1" />
-            <circle cx="200" cy="200" r="160" fill="none" stroke="#E5E7EB" stroke-width="0.5" stroke-dasharray="4 4" />
-            <circle cx="200" cy="200" r="140" fill="none" stroke="#E5E7EB" stroke-width="0.5" stroke-dasharray="2 6" />
-
-            <!-- Nordic cluster -->
-            <circle cx="150" cy="140" r="8" fill="#002F6C" opacity="0.8">
-              <animate attributeName="r" values="8;10;8" dur="3s" repeatCount="indefinite" />
-            </circle>
-            <text x="150" y="120" text-anchor="middle" fill="#002F6C" font-size="10" font-family="Inter, sans-serif" font-weight="500">DK</text>
-
-            <circle cx="165" cy="110" r="6" fill="#3B82C4" opacity="0.7" />
-            <text x="165" y="95" text-anchor="middle" fill="#3B82C4" font-size="9" font-family="Inter, sans-serif">SE</text>
-
-            <circle cx="130" cy="115" r="6" fill="#3B82C4" opacity="0.7" />
-            <text x="130" y="100" text-anchor="middle" fill="#3B82C4" font-size="9" font-family="Inter, sans-serif">NO</text>
-
-            <circle cx="185" cy="105" r="5" fill="#3B82C4" opacity="0.6" />
-            <text x="185" y="92" text-anchor="middle" fill="#3B82C4" font-size="9" font-family="Inter, sans-serif">FI</text>
-
-            <circle cx="105" cy="100" r="4" fill="#3B82C4" opacity="0.5" />
-            <text x="105" y="88" text-anchor="middle" fill="#3B82C4" font-size="8" font-family="Inter, sans-serif">IS</text>
-
-            <!-- China -->
-            <circle cx="280" cy="240" r="12" fill="#EF2B2D" opacity="0.8">
-              <animate attributeName="r" values="12;14;12" dur="3s" repeatCount="indefinite" />
-            </circle>
-            <text x="280" y="270" text-anchor="middle" fill="#EF2B2D" font-size="11" font-family="Inter, sans-serif" font-weight="500">CHINA</text>
-
-            <!-- Connection arc -->
-            <path d="M158 148 Q 220 60 272 232" fill="none" stroke="#002F6C" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.4">
-              <animate attributeName="stroke-dashoffset" values="0;-20" dur="2s" repeatCount="indefinite" />
-            </path>
-
-            <!-- Gudenapath node -->
-            <circle cx="215" cy="185" r="16" fill="#EF2B2D" opacity="0.1" />
-            <circle cx="215" cy="185" r="6" fill="#EF2B2D" />
-            <text x="215" y="210" text-anchor="middle" fill="#002F6C" font-size="9" font-family="Inter, sans-serif" font-weight="600" letter-spacing="0.1em">GUDENAPATH</text>
-          </svg>
+      <!-- Operational reach -->
+      <div class="p-6 rounded-xl bg-white border border-frost card-shadow" data-aos="fade-up" data-aos-delay="350">
+        <h4 class="text-xs font-sans font-semibold tracking-[0.2em] uppercase text-nordic-red mb-4">
+          Our Operational Reach
+        </h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {[
+            'Nordic Advisory Council of senior industry leaders',
+            'Strategic partners in each Nordic country',
+            'Local ambassadors with institutional relationships',
+            'Government & trade authority networks',
+            'China-based team with Nordic-side coordination',
+            'University & research institution connections',
+          ].map((item) => (
+            <div class="flex items-start gap-2 text-sm text-charcoal/60">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-fjord-blue mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              {item}
+            </div>
+          ))}
         </div>
       </div>
     </div>

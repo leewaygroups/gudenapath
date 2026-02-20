@@ -1,22 +1,106 @@
 ---
-const leaders = [
+const groups = [
   {
-    name: 'Founding Partner',
-    role: 'CEO & China Strategy Lead',
-    bio: 'Decades of cross-border experience bridging Danish and Chinese business ecosystems. Deep relationships across government, enterprise, and institutional channels in both regions.',
-    focus: ['Overall strategy', 'China market architecture', 'Government relations'],
+    groupTitle: 'Executive Leadership',
+    groupSubtitle: 'Strategic Direction & Bilateral Command',
+    members: [
+      {
+        name: 'Founding Partner',
+        role: 'CEO & China Strategy Lead',
+        bio: 'Decades of cross-border leadership bridging Nordic and Chinese business ecosystems. Strategic architect of bilateral expansion infrastructure with institutional relationships across government, enterprise, and capital markets.',
+        focus: ['Overall Strategy', 'China Market Architecture', 'Government Relations', 'Executive Advisory'],
+      },
+      {
+        name: 'Nordic Expansion Director',
+        role: 'Head of Nordic Operations',
+        bio: 'Senior executive with deep operational expertise across Denmark, Sweden, Norway, Finland, and Iceland. Leads Nordic market architecture, regulatory navigation, and industrial partner activation.',
+        focus: ['Nordic Market Entry', 'Partner Network', 'Regulatory Coordination', 'Industrial Relations'],
+      },
+      {
+        name: 'Head of China Operations',
+        role: 'China Market Execution & Strategic Partnerships',
+        bio: 'On-the-ground leadership responsible for operational deployment, institutional engagement, and strategic partnership execution across Mainland China.',
+        focus: ['Local Representation', 'Strategic Negotiation', 'Institutional Liaison', 'Ecosystem Activation'],
+      },
+      {
+        name: 'Chief Geopolitical & Strategic Risk Officer',
+        role: 'Cross-Border Risk Architecture',
+        bio: 'Board-level advisor overseeing geopolitical exposure assessment, trade policy analysis, and scenario planning to ensure resilient expansion in complex regulatory environments.',
+        focus: ['Scenario Planning', 'Sanctions & Export Controls', 'FDI Screening', 'Strategic Risk Modeling'],
+      },
+    ],
   },
   {
-    name: 'Nordic Expansion Director',
-    role: 'Head of Nordic Operations',
-    bio: 'Senior executive background across Scandinavian markets with deep expertise in go-to-market strategy, regulatory navigation, and industrial partnerships across Denmark, Sweden, Norway, Finland, and Iceland.',
-    focus: ['Nordic market entry', 'Partner network', 'Regulatory coordination'],
+    groupTitle: 'Strategic Risk & Intelligence',
+    groupSubtitle: 'Foresight, Data & Future-Readiness',
+    members: [
+      {
+        name: 'Director of Strategic Intelligence',
+        role: 'Market & Policy Intelligence Lead',
+        bio: 'Leads advanced market analytics, regulatory monitoring, and cross-border data mapping to power informed expansion decisions and proactive risk mitigation.',
+        focus: ['Market Intelligence', 'Regulatory Monitoring', 'Competitive Analysis', 'Data Architecture'],
+      },
+      {
+        name: 'Innovation & Emerging Technology Advisor',
+        role: 'Technology & Future Sectors Strategy',
+        bio: 'Advises on high-sensitivity industries including AI, clean tech, life sciences, and advanced manufacturing to align expansion with global technology and trade dynamics.',
+        focus: ['AI & Digital Policy', 'Clean Tech Strategy', 'Sector Sensitivity Analysis', 'Innovation Ecosystems'],
+      },
+    ],
   },
   {
-    name: 'Cross-Border Legal Counsel',
-    role: 'Regulatory & Compliance Partner',
-    bio: 'Specialist in EU-China regulatory frameworks, foreign investment screening, data governance, and cross-border compliance architecture.',
-    focus: ['EU & China compliance', 'Investment screening', 'Data governance'],
+    groupTitle: 'Regulatory & Governance',
+    groupSubtitle: 'Compliance, Institutional Trust & Structural Integrity',
+    members: [
+      {
+        name: 'Cross-Border Legal Counsel',
+        role: 'Regulatory & Compliance Partner',
+        bio: 'Specialist in EU–China regulatory frameworks, foreign investment screening, data governance, and cross-border compliance architecture.',
+        focus: ['EU & China Compliance', 'Investment Screening', 'Data Governance', 'Cross-Border Structuring'],
+      },
+      {
+        name: 'Compliance & Export Control Specialist',
+        role: 'Trade & Sanctions Advisory',
+        bio: 'Expert in export controls, dual-use regulations, sanctions regimes, and advanced compliance systems for high-sensitivity industries.',
+        focus: ['Export Control', 'Sanctions Analysis', 'Dual-Use Regulation', 'Trade Structuring'],
+      },
+      {
+        name: 'Senior Government & Institutional Relations Advisor',
+        role: 'Public Policy & Diplomatic Engagement',
+        bio: 'Former senior institutional leader providing structured dialogue facilitation, policy interpretation, and high-level government engagement across Nordic and Chinese jurisdictions.',
+        focus: ['Ministerial Liaison', 'Trade Policy Advisory', 'Diplomatic Channels', 'Public Affairs'],
+      },
+      {
+        name: 'ESG & Governance Strategy Lead',
+        role: 'Sustainability & Corporate Governance',
+        bio: 'Ensures alignment with Nordic ESG standards, EU sustainability regulation, and governance best practices in cross-border operations.',
+        focus: ['EU ESG Frameworks', 'Sustainability Compliance', 'Governance Structuring', 'Reporting Standards'],
+      },
+    ],
+  },
+  {
+    groupTitle: 'Capital & Industrial Strategy',
+    groupSubtitle: 'Capital Access, Industrial Scaling & Structural Growth',
+    members: [
+      {
+        name: 'Capital & Investment Strategy Director',
+        role: 'Cross-Border Capital Architecture',
+        bio: 'Leads investor engagement, M&A structuring, joint venture design, and capital alignment for scalable bilateral growth.',
+        focus: ['Investor Relations', 'M&A Structuring', 'Joint Ventures', 'Sovereign & Private Capital'],
+      },
+      {
+        name: 'Industrial & Supply Chain Strategy Lead',
+        role: 'Supply Chain & Manufacturing Architecture',
+        bio: 'Designs resilient industrial strategies including China+1 frameworks, Nordic production alignment, and cross-border logistics optimization.',
+        focus: ['Supply Chain Diversification', 'Manufacturing Footprint', 'Trade Logistics', 'Industrial Partnerships'],
+      },
+      {
+        name: 'Strategic Partnerships & Deal Flow Director',
+        role: 'Corporate & Institutional Alliances',
+        bio: 'Curates and activates high-value commercial relationships, strategic alliances, and cross-border deal pipelines.',
+        focus: ['Deal Flow Activation', 'Corporate Alliances', 'Strategic Matchmaking', 'Ecosystem Networks'],
+      },
+    ],
   },
 ];
 
@@ -42,41 +126,61 @@ const advisors = [
       </p>
     </div>
 
-    <!-- Core team -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-      {leaders.map((leader, i) => (
-        <div
-          class="group p-8 rounded-xl bg-white border border-frost hover:border-fjord-blue/20 card-shadow hover:card-shadow-hover transition-all duration-500"
-          data-aos="fade-up"
-          data-aos-delay={i * 120}
-        >
-          <!-- Avatar placeholder -->
-          <div class="w-16 h-16 rounded-full bg-nordic-navy/8 flex items-center justify-center mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-nordic-navy/30"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-          </div>
-
-          <h3 class="text-lg font-serif text-nordic-navy leading-snug">
-            {leader.name}
+    <!-- Team groups -->
+    {groups.map((group, gi) => (
+      <div class="mb-16" data-aos="fade-up">
+        <!-- Group header -->
+        <div class="mb-8">
+          <h3 class="text-2xl sm:text-3xl font-serif text-nordic-navy leading-snug">
+            {group.groupTitle}
           </h3>
-          <p class="text-xs font-semibold tracking-[0.1em] uppercase text-nordic-red mt-1 mb-4">
-            {leader.role}
+          <p class="mt-1 text-xs font-semibold tracking-[0.15em] uppercase text-slate">
+            {group.groupSubtitle}
           </p>
-          <p class="text-sm text-charcoal/50 leading-relaxed mb-5">
-            {leader.bio}
-          </p>
-
-          <div class="flex flex-wrap gap-2">
-            {leader.focus.map((tag) => (
-              <span class="px-2.5 py-1 text-[10px] font-medium tracking-wide uppercase bg-nordic-navy/5 text-nordic-navy/60 rounded-md">
-                {tag}
-              </span>
-            ))}
-          </div>
         </div>
-      ))}
-    </div>
 
-    <!-- Nordic Advisory Council -->
+        <!-- Members grid -->
+        <div class:list={[
+          "grid gap-6",
+          group.members.length === 4 ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" :
+          group.members.length === 3 ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" :
+          "grid-cols-1 sm:grid-cols-2"
+        ]}>
+          {group.members.map((member, i) => (
+            <div
+              class="group p-6 sm:p-7 rounded-xl bg-white border border-frost hover:border-fjord-blue/20 card-shadow hover:card-shadow-hover transition-all duration-500"
+              data-aos="fade-up"
+              data-aos-delay={i * 80}
+            >
+              <!-- Avatar placeholder -->
+              <div class="w-14 h-14 rounded-full bg-nordic-navy/8 flex items-center justify-center mb-5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-nordic-navy/30"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              </div>
+
+              <h4 class="text-base font-serif text-nordic-navy leading-snug">
+                {member.name}
+              </h4>
+              <p class="text-[10px] font-semibold tracking-[0.1em] uppercase text-nordic-red mt-1 mb-3">
+                {member.role}
+              </p>
+              <p class="text-xs text-charcoal/50 leading-relaxed mb-4">
+                {member.bio}
+              </p>
+
+              <div class="flex flex-wrap gap-1.5">
+                {member.focus.map((tag) => (
+                  <span class="px-2 py-0.5 text-[9px] font-medium tracking-wide uppercase bg-nordic-navy/5 text-nordic-navy/55 rounded">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+
+    <!-- Nordic Advisory Council (unchanged) -->
     <div data-aos="fade-up">
       <div class="p-8 sm:p-10 rounded-xl bg-white border border-frost card-shadow">
         <div class="flex flex-col lg:flex-row lg:items-start gap-8">
